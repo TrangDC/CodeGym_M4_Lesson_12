@@ -64,17 +64,20 @@ function displayFormCreate() {
 
 function getSmartphone(smartphone) {
     return `<tr>
-            <td>${smartphone.producer}</td>
-            <td>${smartphone.model}</td>
-            <td>${smartphone.price}</td>` +
-            `<td class="btn"><button class="deleteSmartphone" onclick="deleteSmartphone(${smartphone.id})">Delete</button></td>
-            </tr>`;
+        <td >${smartphone.producer}</td>
+        <td >${smartphone.model}</td>
+        <td >${smartphone.price}</td>` +
+        `<td class="btn"><button class="deleteSmartphone" onclick="deleteSmartphone(${smartphone.id})">Delete</button></td>
+        </tr>`;
 }
 
 function deleteSmartphone(id) {
     $.ajax({
-        type: 'DELETE',
-        url: 'http://localhost:8080/api/smartphones/${id}',
+        type: "DELETE",
+        //tên API
+        url: `http://localhost:8080/api/smartphones/${id}`,
+        //xử lý khi thành công
         success: successHandler
     });
 }
+
